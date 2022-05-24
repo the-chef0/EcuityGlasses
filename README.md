@@ -37,3 +37,7 @@ This is only meant to provide an overview. The methods themselves are extensivel
 | private | `applyKernel`         | `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` `function: String`                                     | `Double`             |
 | private | `writeToKernelCover`  | `kernelCover: Array<DoubleArray>` `descriptor: Double` `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` | `void`               |
 | private | `getMillimetersDepth` | `x: Int` `y: Int`                                                                                                               | `Int`                |
+
+<ol>
+  <li> `attachDepthImage` initializes class variables
+</ol>
