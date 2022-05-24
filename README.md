@@ -52,10 +52,10 @@ The final result is an array with the same dimensions as the depth image but wit
 | private | `distanceCategoryCountsInRegion` | `thresholdDistance: Int` `numOfDistanceCategories: Int` `rowLowBorder: Int` `columnRowBorder: Int` `rowHighBorder: Int` `columnHighBorder: Int` | `IntArray`        |
 
 #### `motorValuesToString`
-For our prototype, we used a 3x3 vibration motor layout, so a generated string `S = ABCDEFGHI` (with `A,B ... I` integers denoting vibration frequency) maps to the following vibration motor layout:
-`A B C`
-`D E F`
-`G H I`
+For our prototype, we used a 3x3 vibration motor layout, so a generated string `S = ABCDEFGHI` (with `A,B ... I` integers denoting vibration frequency) maps to the following vibration motor layout:   
+`A B C`   
+`D E F`   
+`G H I`   
 So just like reading the motor layout left to right, top to bottom.
 
 ### `EcuityMathTools`
