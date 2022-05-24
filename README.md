@@ -44,7 +44,9 @@ This is only meant to provide an overview. The methods themselves are extensivel
   <li> attachDepthImage initializes class variables
   <li> computeKernelCover loops over depth image in kernel-sized segments
     <ol>
-      <li> Runs applyKernel on each segment
-      <li> Runs writeToKernelCover to write the value computed in the previous step to the output
+      <li> Runs applyKernel on each segment - applies a function (in this case a median but it's flexible) to all depth values in that segment and returns the result M
+      <li> Runs writeToKernelCover to write M to all pixels that were covered by the kernel 
     </ol>
 </ol>
+
+The final result is an array with the same dimensions as the depth image but with a reduced amount of information - every kernel-sized segment contains the median of the depth values in that segment.
