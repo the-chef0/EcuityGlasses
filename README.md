@@ -60,3 +60,12 @@ The final result is an array with the same dimensions as the depth image but wit
 | private | `computeSegmentation`            | `segments: Int` `segmentation: Array<Int>` `dimension: String`                                                                                  | `void`            |
 | private | `hapticFrequencies`              | `thresholdDistance: Int` `numOfDistanceCategories: Int`                                                                                         | `Array<IntArray>` |
 | private | `distanceCategoryCountsInRegion` | `thresholdDistance: Int` `numOfDistanceCategories: Int` `rowLowBorder: Int` `columnRowBorder: Int` `rowHighBorder: Int` `columnHighBorder: Int` | `IntArray`        |
+
+### `EcuityMathTools`
+
+|  Access  |         Method name         |                                  Parameters                                  | Return type |
+|:--------:|:---------------------------:|:----------------------------------------------------------------------------:|:-----------:|
+| internal | `median`                    | `array: Array<Int>`                                                          | `Double`    |
+| internal | `distanceToCategory`        | `distance: Double` `thresholdDistance: Int` `numOfDistanceCategories: Int`   | `Int`       |
+| internal | `categoryCountsToFrequency` | `numOfDistanceCategories: Int` `categoryCounts: IntArrays` `multiplier: Int` | `Int`       |
+| private  | `argmax`                    | `array: IntArray`                                                            | `Int`       |
