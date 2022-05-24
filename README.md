@@ -83,3 +83,6 @@ The final result is an array with the same dimensions as the depth image but wit
 18. Back in `HelloArRenderer`, we call `motorValuesToString` on `A` to get a string `S` to send to the microcontroller via Bluetooth.
 19. Transmit `S` to the microcontroller.
 20. Wait for the next depth image and go to step 3.
+
+## Additional notes
+To whoever carries on with the project, please keep up a decent standard of code commenting and documentation. If you don't, when you come home, I'll be under your bed.
