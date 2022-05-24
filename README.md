@@ -41,10 +41,10 @@ This is only meant to provide an overview. The methods themselves are extensivel
 ### Lifecycle:
 
 <ol>
-  <li> `attachDepthImage` initializes class variables
-  <li> `computeKernelCover` segments depth image into kernel-sized segments
+  <li> attachDepthImage initializes class variables
+  <li> computeKernelCover segments depth image into kernel-sized segments
     <ol>
-      <li> Runs `applyKernel` on each segment
-      <li> Runs `writeToKernelCover` to write the value computed in the previous step to the output
+      <li> Runs applyKernel on each segment
+      <li> Runs writeToKernelCover to write the value computed in the previous step to the output
     </ol>
 </ol>
