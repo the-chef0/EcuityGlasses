@@ -38,26 +38,6 @@ This is only meant to provide an overview. The methods themselves are extensivel
 | private | `writeToKernelCover`  | `kernelCover: Array<DoubleArray>` `descriptor: Double` `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` | `void`               |
 | private | `getMillimetersDepth` | `x: Int` `y: Int`                                                                                                               | `Int`                |
 
-### Lifecycle:
-
-<ol>
-  <li> An instance of EcuityDepthProcessor
-  <li> attachDepthImage initializes class variables
-  <li> computeKernelCover loops over depth image in kernel-sized segments
-    <ol>
-      <li> Runs applyKernel on each segment - applies a function (in this case a median but it's flexible) to all depth values in that segment and returns the result M
-      <li> Runs writeToKernelCover to write M to all pixels that were covered by the kernel 
-    </ol>
-</ol>
-
-1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using.
-2. `EcuitySensoryAdapter` creates its own, local instance of `EcuityDepthProcessor`
-3. Once a depth image is obtained, we call `attach` on the instance of `EcuitySensoryAdapter`
-4. `attach` calls `attachDepthImage`
-5. `attach` calls `computeKernelCover`, defining the kernel dimensions (hardcoded)
-  5.1 `computeKernelCover` loops over the depth image in kernel-sized chunks
-      5.1.1 Calls `applyKernel` on each chunk - applies a function (in this case a median but it's flexible) to all depth values in that chunk and returns the result 
-
 The final result is an array with the same dimensions as the depth image but with a reduced amount of information - every kernel-sized segment contains the median of the depth values in that segment.
 
 ### `EcuitySensoryAdapter`
@@ -79,3 +59,17 @@ The final result is an array with the same dimensions as the depth image but wit
 | internal | `distanceToCategory`        | `distance: Double` `thresholdDistance: Int` `numOfDistanceCategories: Int`   | `Int`       |
 | internal | `categoryCountsToFrequency` | `numOfDistanceCategories: Int` `categoryCounts: IntArrays` `multiplier: Int` | `Int`       |
 | private  | `argmax`                    | `array: IntArray`                                                            | `Int`       |
+
+
+### Lifecycle:
+
+1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using.
+2. `EcuitySensoryAdapter` creates its own, local instance of `EcuityDepthProcessor`
+3. Once a depth image is obtained, we call `attach` on the instance of `EcuitySensoryAdapter`
+4. `attach` calls `attachDepthImage`
+5. `attach` calls `computeKernelCover`, defining the kernel dimensions (hardcoded)
+6. `computeKernelCover` loops over the depth image in kernel-sized chunks
+7. `computeKernelCover` calls `applyKernel` on each chunk - applies a function (in this case a median but it's flexible) to all depth values in that chunk and returns the result `M`
+8. `computeKernelCover` calls `writeToKernelCover` to write `M` to all pixels that were covered by the kernel
+9. `computeKernelCover` returns a `kernelCover`
+10. 
