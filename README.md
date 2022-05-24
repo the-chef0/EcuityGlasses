@@ -51,6 +51,8 @@ The final result is an array with the same dimensions as the depth image but wit
 | private | `hapticFrequencies`              | `thresholdDistance: Int` `numOfDistanceCategories: Int`                                                                                         | `Array<IntArray>` |
 | private | `distanceCategoryCountsInRegion` | `thresholdDistance: Int` `numOfDistanceCategories: Int` `rowLowBorder: Int` `columnRowBorder: Int` `rowHighBorder: Int` `columnHighBorder: Int` | `IntArray`        |
 
+#### `motorValuesToString`
+
 ### `EcuityMathTools`
 
 |  Access  |         Method name         |                                  Parameters                                  | Return type |
