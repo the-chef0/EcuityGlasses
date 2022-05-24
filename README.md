@@ -28,10 +28,11 @@ This is only meant to provide an overview. The methods themselves are extensivel
 | `EcuitySensoryAdapter` | Takes the processed depth image and generates data that can be sent to the vibration motors. |
 | `EcuityMathTools`      | Contains auxiliary methods for some mathematical routines.                                   |
 
-### `EcuityDepthProcessor`
-|  Access |      Method name     |                                          Parameters                                         |      Return type     |
-|:-------:|:--------------------:|:-------------------------------------------------------------------------------------------:|:--------------------:|
-| public  | `attachDepthImage`   | `depthImage: Image`                                                                         | `void`               |
-| public  | `computeKernelCover` | `kernelWidth: Int` `kernelHeight: Int` `function: String`                                   | `Array<DoubleArray>` |
-| private | `applyKernel`        | `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` `function: String` | `Double`             |
-| private | `writeToKernelCover` |                                                                                             |                      |
+### `EcuityDepthProcessor`|  Access |      Method name      |                                                            Parameters                                                           |      Return type     |
+|:-------:|:---------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|
+| public  | `attachDepthImage`    | `depthImage: Image`                                                                                                             | `void`               |
+| public  | `depthImageAttached`  | none                                                                                                                            | `Boolean`            |
+| public  | `computeKernelCover`  | `kernelWidth: Int` `kernelHeight: Int` `function: String`                                                                       | `Array<DoubleArray>` |
+| private | `applyKernel`         | `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` `function: String`                                     | `Double`             |
+| private | `writeToKernelCover`  | `kernelCover: Array<DoubleArray>` `descriptor: Double` `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` | `void`               |
+| private | `getMillimetersDepth` | `x: Int` `y: Int`                                                                                                               | `Int`                |
