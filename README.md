@@ -7,7 +7,7 @@ This project is essentially an Android app which is eventually meant to be run o
 The app is made out of a combination of two different open source projects: ARCore's [Hello AR sample](https://github.com/google-ar/arcore-android-sdk/tree/master/samples/hello_ar_kotlin) and kai-morich's [SimpleBluetoothTerminal](https://github.com/kai-morich/SimpleBluetoothTerminal). The app uses the Hello AR sample to obtain (and render) a depth image from ARCore, the Ecuity software we added does intermediary processing, and the Bluetooth terminal sends the data to the ESP32 microcontroller which then controls the vibration motors.
 
 ### Hello AR sample
-This is what the app is built around. By default, the entire program demonstrates ARCore functionality - plane detection, object placement and tracking, depth perception etc. I stripped it down to where it only gets the depth image, renders it on the screen and passes it to the Ecuity code.
+This is what the app is built around. By default, the entire program demonstrates ARCore functionality - plane detection, object placement and tracking, depth perception etc. I stripped it down to where it only gets the depth image, renders it on the screen and passes it to the Ecuity code (see line 230 in `HelloArRenderer`).
 
 ### Ecuity software
 Our custom-made code can be found in the `java/kotlin/common.helpers` directory. It's responsible for segmenting the depth image, processing the segments, computing distance categories, and generating the final string with vibration frequencies that gets sent to the microcontroller. Detailed documention of classes and functions can be found below.
