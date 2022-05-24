@@ -50,3 +50,13 @@ This is only meant to provide an overview. The methods themselves are extensivel
 </ol>
 
 The final result is an array with the same dimensions as the depth image but with a reduced amount of information - every kernel-sized segment contains the median of the depth values in that segment.
+
+### `EcuitySensoryAdapter`
+
+|  Access |            Method name           |                                                                    Parameters                                                                   |    Return type    |
+|:-------:|:--------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------:|
+| public  | `attach`                         | `depthImage: Image` `thresholdDistance: Int` `numOfDistanceCategories: Int`                                                                     | `Array<IntArray>` |
+| public  | `motorValuesToString`            | `motorValues: Array<IntArray>` `rowLimit: Int` `columnLimit: Int`                                                                               | `String`          |
+| private | `computeSegmentation`            | `segments: Int` `segmentation: Array<Int>` `dimension: String`                                                                                  | `void`            |
+| private | `hapticFrequencies`              | `thresholdDistance: Int` `numOfDistanceCategories: Int`                                                                                         | `Array<IntArray>` |
+| private | `distanceCategoryCountsInRegion` | `thresholdDistance: Int` `numOfDistanceCategories: Int` `rowLowBorder: Int` `columnRowBorder: Int` `rowHighBorder: Int` `columnHighBorder: Int` | `IntArray`        |
