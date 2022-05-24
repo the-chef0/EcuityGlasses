@@ -28,7 +28,8 @@ This is only meant to provide an overview. The methods themselves are extensivel
 | `EcuitySensoryAdapter` | Takes the processed depth image and generates data that can be sent to the vibration motors. |
 | `EcuityMathTools`      | Contains auxiliary methods for some mathematical routines.                                   |
 
-### `EcuityDepthProcessor`|  Access |      Method name      |                                                            Parameters                                                           |      Return type     |
+### `EcuityDepthProcessor`
+|  Access |      Method name      |                                                            Parameters                                                           |      Return type     |
 |:-------:|:---------------------:|:-------------------------------------------------------------------------------------------------------------------------------:|:--------------------:|
 | public  | `attachDepthImage`    | `depthImage: Image`                                                                                                             | `void`               |
 | public  | `depthImageAttached`  | none                                                                                                                            | `Boolean`            |
