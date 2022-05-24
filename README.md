@@ -66,10 +66,12 @@ The final result is an array with the same dimensions as the depth image but wit
 1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using.
 2. `EcuitySensoryAdapter` creates its own, local instance of `EcuityDepthProcessor`
 3. Once a depth image is obtained, we call `attach` on the instance of `EcuitySensoryAdapter`
-4. `attach` calls `attachDepthImage`
-5. `attach` calls `computeKernelCover`, defining the kernel dimensions (hardcoded)
-6. `computeKernelCover` loops over the depth image in kernel-sized chunks
-7. `computeKernelCover` calls `applyKernel` on each chunk - applies a function (in this case a median but it's flexible) to all depth values in that chunk and returns the result `M`
+    4. `attach` calls `attachDepthImage`
+    5. `attach` calls `computeKernelCover`, defining the kernel dimensions (hardcoded)
+    6. `computeKernelCover` loops over the depth image in kernel-sized chunks
+    7. `computeKernelCover` calls `applyKernel` on each chunk - applies a function (in this case a median but it's flexible) to all depth values in that chunk and returns the result `M`
 8. `computeKernelCover` calls `writeToKernelCover` to write `M` to all pixels that were covered by the kernel
 9. `computeKernelCover` returns a `kernelCover`
-10. 
+10. `attach` calls `computeSegmentation` on both rows and columns to divide the `kernelCover` into a grid corresponding to the layout of the vibration motors
+11. `attach` calls `hapticFrequencies`
+12. `hapticFrequencies` 
