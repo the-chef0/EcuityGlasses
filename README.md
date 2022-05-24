@@ -55,6 +55,7 @@ The final result is an array with the same dimensions as the depth image but wit
 
 |  Access |            Method name           |                                                                    Parameters                                                                   |    Return type    |
 |:-------:|:--------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------:|
+| public  | `constructor`                    | `hapticDeviceRows: Int` `hapticDeviceColumns: Int`   | `EcuitySensoryAdapter`
 | public  | `attach`                         | `depthImage: Image` `thresholdDistance: Int` `numOfDistanceCategories: Int`                                                                     | `Array<IntArray>` |
 | public  | `motorValuesToString`            | `motorValues: Array<IntArray>` `rowLimit: Int` `columnLimit: Int`                                                                               | `String`          |
 | private | `computeSegmentation`            | `segments: Int` `segmentation: Array<Int>` `dimension: String`                                                                                  | `void`            |
