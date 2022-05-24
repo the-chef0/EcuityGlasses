@@ -18,11 +18,20 @@ By default, this thing lets you connect to a Bluetooth device and send and recei
 ### Microcontroller code
 The code that runs on the microcontroller can be found in a [separate repo]().
 
-# Ecuity API documentation
+# Ecuity code documentation
+This is only meant to provide an overview. The methods themselves are extensively commented in the code files.
 
-## Classes
+## Class overview
 |      Class name      |                                          Description                                         |
 |:--------------------:|:--------------------------------------------------------------------------------------------:|
 | `EcuityDepthProcessor` | Processes the depth image by sliding the processing kernel/window over it.                   |
 | `EcuitySensoryAdapter` | Takes the processed depth image and generates data that can be sent to the vibration motors. |
 | `EcuityMathTools`      | Contains auxiliary methods for some mathematical routines.                                   |
+
+## `EcuityDepthProcessor`
+|  Access |      Method name     |                                          Parameters                                         |      Return type     |
+|:-------:|:--------------------:|:-------------------------------------------------------------------------------------------:|:--------------------:|
+| public  | `attachDepthImage`   | `depthImage: Image`                                                                         | `void`               |
+| public  | `computeKernelCover` | `kernelWidth: Int` `kernelHeight: Int` `function: String`                                   | `Array<DoubleArray>` |
+| private | `applyKernel`        | `startingX: Int` `startingY: Int` `kernelWidth: Int` `kernelHeight: Int` `function: String` | `Double`             |
+| private | `writeToKernelCover` |                                                                                             |                      |
