@@ -63,7 +63,7 @@ The final result is an array with the same dimensions as the depth image but wit
 
 ### Lifecycle:
 
-1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using..
+1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using.
 2. `EcuitySensoryAdapter` creates its own, local instance of `EcuityDepthProcessor`.
 3. Once a depth image is obtained, we call `attach` on the instance of `EcuitySensoryAdapter`.
 4. `attach` calls `attachDepthImage`.
