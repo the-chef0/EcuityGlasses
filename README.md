@@ -41,6 +41,7 @@ This is only meant to provide an overview. The methods themselves are extensivel
 ### Lifecycle:
 
 <ol>
+  <li> An instance of EcuityDepthProcessor
   <li> attachDepthImage initializes class variables
   <li> computeKernelCover loops over depth image in kernel-sized segments
     <ol>
@@ -48,6 +49,14 @@ This is only meant to provide an overview. The methods themselves are extensivel
       <li> Runs writeToKernelCover to write M to all pixels that were covered by the kernel 
     </ol>
 </ol>
+
+1. An instance of `EcuitySensoryAdapter` gets initialized in `HelloArRenderer`, defining the number of rows and columns of vibration motors we are using.
+2. `EcuitySensoryAdapter` creates its own, local instance of `EcuityDepthProcessor`
+3. Once a depth image is obtained, we call `attach` on the instance of `EcuitySensoryAdapter`
+4. `attach` calls `attachDepthImage`
+5. `attach` calls `computeKernelCover`, defining the kernel dimensions (hardcoded)
+  5.1 `computeKernelCover` loops over the depth image in kernel-sized chunks
+      5.1.1 Calls `applyKernel` on each chunk - applies a function (in this case a median but it's flexible) to all depth values in that chunk and returns the result 
 
 The final result is an array with the same dimensions as the depth image but with a reduced amount of information - every kernel-sized segment contains the median of the depth values in that segment.
 
